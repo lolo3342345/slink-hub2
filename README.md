@@ -1,7 +1,7 @@
 --[[
 getgenv().Team = "Marines"          -- Pirates or Marines
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Phatdepzaicrystal/Phat/refs/heads/main/Phat.lua"))()
-]] --
+--]]
 if getgenv().Team == "Pirates" then
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates")
 elseif getgenv().Team == "Marines" then
@@ -2835,7 +2835,7 @@ do
 
     spawn(
         function()
-            while wait() do
+            while task.wait(0.5) do
                 pcall(
                     function()
                         if MobESP then
@@ -2885,7 +2885,7 @@ do
 
     spawn(
         function()
-            while wait() do
+            while task.wait(0.5) do
                 pcall(
                     function()
                         if SeaESP then
@@ -2910,7 +2910,7 @@ do
                                         TextLabel.Size = UDim2.new(0, 200, 0, 50)
                                         TextLabel.Font = Enum.Font.GothamBold
                                         TextLabel.TextColor3 = Color3.fromRGB(7, 236, 240)
-                                        TextLabel.Text.Size = 35
+                                        TextLabel.TextScaled = true
                                     end
                                     local Dis =
                                         math.floor(
@@ -2935,7 +2935,7 @@ do
 
     spawn(
         function()
-            while wait() do
+            while task.wait(0.5) do
                 pcall(
                     function()
                         if NpcESP then
@@ -2960,7 +2960,7 @@ do
                                         TextLabel.Size = UDim2.new(0, 200, 0, 50)
                                         TextLabel.Font = Enum.Font.GothamBold
                                         TextLabel.TextColor3 = Color3.fromRGB(7, 236, 240)
-                                        TextLabel.Text.Size = 35
+                                        TextLabel.TextScaled = true
                                     end
                                     local Dis =
                                         math.floor(
@@ -2983,13 +2983,7 @@ do
         end
     )
 
-    function isnil(thing)
-        return (thing == nil)
-    end
-    local function round(n)
-        return math.floor(tonumber(n) + 0.5)
-    end
-    Number = math.random(1, 1000000)
+    -- [isnil, round, Number already defined above - removed duplicates]
 
     function UpdateIslandMirageESP()
         for i, v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
@@ -3034,13 +3028,7 @@ do
         end
     end
 
-    function isnil(thing)
-        return (thing == nil)
-    end
-    local function round(n)
-        return math.floor(tonumber(n) + 0.5)
-    end
-    Number = math.random(1, 1000000)
+    -- [isnil, round, Number already defined above - removed duplicates]
 
     function UpdateAfdESP()
         for i, v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
